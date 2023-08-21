@@ -46,7 +46,7 @@
       <div class="flex-1">
         <h1 class="text-[#111] text-3xl font-semibold mb-2">Kitchenware</h1>
         <div class=" grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-4  mb-5">
-          <div class=" max-w-xs overflow-hidden bg-white rounded-lg shadow-lg ">
+          <div onclick="handleBtn(this)" class=" max-w-xs overflow-hidden bg-white rounded-lg shadow-lg ">
             <img class=" object-contain w-5/12 mx-auto h-56" src="images/prod1.png" alt="avatar">
             <div class="py-5 text-center flex flex-col justify-center items-center ">
               <ul class="flex">
@@ -86,7 +86,7 @@
             </div>
           </div>
 
-          <div class=" max-w-xs overflow-hidden bg-white rounded-lg shadow-lg ">
+          <div onclick="handleBtn(this)" class=" max-w-xs overflow-hidden bg-white rounded-lg shadow-lg ">
             <img class=" object-contain w-6/12 mx-auto h-56" src="images/prod2.png" alt="avatar">
 
             <div class="py-5 text-center flex flex-col justify-center items-center ">
@@ -127,9 +127,8 @@
             </div>
           </div>
 
-          <div class=" max-w-xs overflow-hidden bg-white rounded-lg shadow-lg ">
+          <div onclick="handleBtn(this)" class=" max-w-xs overflow-hidden bg-white rounded-lg shadow-lg ">
             <img class=" object-contain w-6/12 mx-auto h-56" src="images/prod3.png" alt="avatar">
-
             <div class="py-5 text-center flex flex-col justify-center items-center ">
               <ul class="flex">
                 <li><svg xmlns="http://www.w3.org/2000/svg" fill="#FFC107" viewBox="0 0 24 24" stroke="currentColor"
@@ -163,7 +162,7 @@
                   </svg>
                 </li>
               </ul>
-              <h2 class="card-title text-[#111] text-xl font-semibold ">K. Accessories</h2>
+              <h2 class="card-title text-[#111] text-xl font-semibold ">Home Cooker</h2>
               <p class="text-[#11111180] text-lg font-normal ">49.00 TK</p>
             </div>
           </div>
@@ -173,7 +172,7 @@
 
         <h1 class="text-[#111] text-3xl font-semibold mb-2">Sportswear</h1>
         <div class=" grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-5">
-          <div class=" max-w-xs overflow-hidden bg-white rounded-lg shadow-lg ">
+          <div onclick="handleBtn(this)" class=" max-w-xs overflow-hidden bg-white rounded-lg shadow-lg ">
             <img class=" object-contain w-6/12 mx-auto h-56" src="images/prod4.png" alt="avatar">
 
             <div class="py-5 text-center flex flex-col justify-center items-center ">
@@ -213,7 +212,7 @@
               <p class="text-[#11111180] text-lg font-normal ">49.00 TK</p>
             </div>
           </div>
-          <div class=" max-w-xs overflow-hidden bg-white rounded-lg shadow-lg ">
+          <div onclick="handleBtn(this)" class=" max-w-xs overflow-hidden bg-white rounded-lg shadow-lg ">
             <img class=" object-contain w-6/12 mx-auto h-56" src="images/prod5.png" alt="avatar">
 
             <div class="py-5 text-center flex flex-col justify-center items-center ">
@@ -253,7 +252,8 @@
               <p class="text-[#11111180] text-lg font-normal ">69.00 TK</p>
             </div>
           </div>
-          <div class=" max-w-xs overflow-hidden bg-white rounded-lg shadow-lg ">
+
+          <div onclick="handleBtn(this)" class=" max-w-xs overflow-hidden bg-white rounded-lg shadow-lg ">
             <img class=" object-contain w-6/12 mx-auto h-56" src="images/prod6.png" alt="avatar">
 
             <div class="py-5 text-center flex flex-col justify-center items-center ">
@@ -300,30 +300,34 @@
       <div class="pt-10 md:pt-28  text-center md:text-left ">
         <div>
           <h2 class="text-[#111] text-2xl font-medium mb-2">Have coupon?</h2>
-          <p class="flex justify-center md:justify-start"><input type="text" placeholder="Coupon code"
-              class="py-2 px-3 border-2 rounded-md w-6/12" /><button
-              class="opacity-60 cursor-not-allowed py-2 px-3 text-[#FFF] font-semibold bg-[#E527B2] border-r-2 rounded-r-md"
-              disabled>Apply</button>
+          <p class="flex justify-center md:justify-start">
+            <input id="applyInput" type="text" placeholder="Coupon code"
+              class="py-2 px-3 border-2 rounded-md w-6/12" /><button id="applyBtn"
+              class="opacity-60 cursor-not-allowed py-2 px-3 text-[#FFF] font-semibold bg-[#E527B2] border-r-2 rounded-r-md">Apply</button>
           </p>
         </div>
         <div>
-          <div class="my-2">
+          <div class="my-4">
+            <ol id="productItems" class="text-[#111] text-lg md:text-2xl font-medium">
+
+            </ol>
           </div>
           <hr class="border-b-2 border-[#11111126] md:w-9/12 mt-3">
-          <div class="text-justify w-9/12 mx-auto md:w-full md:text-left">
+          <div class="text-justify md:w-11/12 mx-auto md:w-full md:text-left my-4">
             <p class="text-[#111] text-lg md:text-2xl font-medium">Total price: <span
-                class="text-[#11111180] text-lg md:text-xl font-normal">0 TK</span></p>
+                class="text-[#11111180] text-lg md:text-xl font-normal"><span id="productPrice">0</span>TK</span></p>
             <p class="text-[#111] text-lg md:text-2xl font-medium">Discount: <span
-                class="text-[#11111180] text-lg md:text-xl font-normal">0
+                class="text-[#11111180] text-lg md:text-xl font-normal"><span id="discount">0</span>
                 TK</span></p>
             <p class="text-[#111] text-lg md:text-2xl font-medium">Total: <span
-                class="text-[#11111180] text-lg md:text-xl font-normal">0
+                class="text-[#11111180] text-lg md:text-xl font-normal"><span id="total">0</span>
                 TK</span></p>
           </div>
         </div>
         <hr class="border-b-2 border-[#11111126] md:w-9/12 mt-3">
-        <button onclick="my_modal_1.showModal()"
-          class="btn hover:bg-fuchsia-900 w-52 mt-3 text-[#FFF] text-xl font-semibold bg-[#E527B2] capitalize">Make
+        <button id="PurchaseBtn" onclick="my_modal_1.showModal()"
+          class="btn hover:bg-fuchsia-900 w-52 mt-3 text-[#FFF] text-xl font-semibold bg-[#E527B2] capitalize"
+          disabled>Make
           Purchase</button>
       </div>
     </section>
@@ -338,10 +342,10 @@
         <img src="images/congo.png" alt="">
       </div>
       <h3 class="font-bold text-lg text-center">Congratulations</h3>
-      <p class="pt-2 pb-0 text-center">You Purchase the product</p>
+      <p class="pt-2 pb-0 text-center">Your Purchase the product</p>
       <div class="modal-action flex justify-center">
         <!-- if there is a button in form, it will close the modal -->
-        <button class="btn rounded-md text-white px-6 hover:bg-fuchsia-900 bg-[#E527B2]">Go Home</button>
+        <button id="goHome" class="btn rounded-md text-white px-6 hover:bg-fuchsia-900 bg-[#E527B2]">Go Home</button>
       </div>
     </form>
   </dialog>
