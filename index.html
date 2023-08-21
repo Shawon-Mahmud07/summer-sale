@@ -310,7 +310,7 @@
           <div class="my-2">
           </div>
           <hr class="border-b-2 border-[#11111126] md:w-9/12 mt-3">
-          <div class="text-justify w-6/12 mx-auto md:w-full md:text-left">
+          <div class="text-justify w-9/12 mx-auto md:w-full md:text-left">
             <p class="text-[#111] text-lg md:text-2xl font-medium">Total price: <span
                 class="text-[#11111180] text-lg md:text-xl font-normal">0 TK</span></p>
             <p class="text-[#111] text-lg md:text-2xl font-medium">Discount: <span
@@ -322,16 +322,29 @@
           </div>
         </div>
         <hr class="border-b-2 border-[#11111126] md:w-9/12 mt-3">
-        <button
-          class="btn hover:text-black hover:bg-red-500 w-52 mt-3 text-[#FFF] text-xl font-semibold bg-[#E527B2] capitalize"
-          disabled>Make
+        <button onclick="my_modal_1.showModal()"
+          class="btn hover:bg-fuchsia-900 w-52 mt-3 text-[#FFF] text-xl font-semibold bg-[#E527B2] capitalize">Make
           Purchase</button>
       </div>
     </section>
   </main>
 
 
+  <!-- Open the modal using ID.showModal() method -->
 
+  <dialog id="my_modal_1" class="modal">
+    <form method="dialog" class="modal-box">
+      <div class="flex justify-center items-center">
+        <img src="images/congo.png" alt="">
+      </div>
+      <h3 class="font-bold text-lg text-center">Congratulations</h3>
+      <p class="pt-2 pb-0 text-center">You Purchase the product</p>
+      <div class="modal-action flex justify-center">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn rounded-md text-white px-6 hover:bg-fuchsia-900 bg-[#E527B2]">Go Home</button>
+      </div>
+    </form>
+  </dialog>
   <!-- script file -->
   <script src="script.js"></script>
 </body>
